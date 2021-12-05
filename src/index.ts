@@ -170,7 +170,7 @@ class NProgress {
 
 function useNProgress({
   animationDuration = 200,
-  incrementDuration = 2000,
+  incrementDuration = 200,
   isAnimating = false,
   minimum = 0.08,
 }: NProgressOptions = {}) {
