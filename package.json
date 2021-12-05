@@ -1,6 +1,6 @@
 {
   "name": "use-nprogress",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "react hook for NProgress",
   "author": "hemengke1997 <23536175@qq.com>",
   "types": "./dist/index.d.ts",
@@ -25,7 +25,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "prepublish": "yarn build"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
