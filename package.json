@@ -12,6 +12,7 @@
       "require": "./dist/index.umd.js"
     }
   },
+  "repository": "https://github.com/hemengke1997/use-nprogress",
   "files": [
     "dist"
   ],
