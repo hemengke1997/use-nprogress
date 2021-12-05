@@ -27,7 +27,7 @@ export default defineConfig({
     outDir: "dist",
     minify: true,
     lib: {
-      entry: path.resolve(__dirname, "src/index.tsx"),
+      entry: path.resolve(__dirname, "src/index.ts"),
       name: "use-nprogress",
       fileName: "index",
       formats: ["es", "umd"],

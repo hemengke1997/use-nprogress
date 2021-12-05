@@ -21,10 +21,7 @@
     "experimentalDecorators": true,
     "downlevelIteration": true,
     "strict": true,
-    "types": ["vite/client"],
-    "typeRoots": ["./node_modules/@types/", "./types"],
-
   },
-  "include": ["src/**/*.ts", "vite.config.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist", "**/*.js"]
 }
