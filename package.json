@@ -1,6 +1,6 @@
 {
   "name": "use-nprogress",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "react hook for NProgress",
   "author": "hemengke1997 <23536175@qq.com>",
   "types": "./dist/index.d.ts",
