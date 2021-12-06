@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import useSafeState from './useSafeState';
 
 interface NProgressOptions {
   animationDuration?: number;
@@ -178,9 +179,9 @@ function useNProgress({
   const setProgressRef = useRef<NProgress['set']>();
   const setIsFinishedRef = useRef<NProgress['setIsFinished']>();
 
-  const [value, setValue] = useState<number>();
+  const [value, setValue] = useSafeState<number>();
 
-  const [isFinished, setIsFinished] = useState<boolean>(!isAnimating || false);
+  const [isFinished, setIsFinished] = useSafeState<boolean>(!isAnimating || false);
 
   useEffect(() => {
     nprogressRef.current = new NProgress({
@@ -205,6 +206,10 @@ function useNProgress({
       nprogressRef.current?.start();
     } else {
       nprogressRef.current?.done();
+    }
+
+    return () => {
+      nprogressRef.current?.done()
     }
   }, [isAnimating]);
 
