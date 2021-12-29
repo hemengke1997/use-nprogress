@@ -1,13 +1,10 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 
 export type ShouldUpdateFunc<T> = (prev: T | undefined, next: T) => boolean;
 
 const defaultShouldUpdate = <T>(a?: T, b?: T) => a !== b;
 
-function usePrevious<T>(
-  state: T,
-  shouldUpdate: ShouldUpdateFunc<T> = defaultShouldUpdate
-): T | undefined {
+function usePrevious<T>(state: T, shouldUpdate: ShouldUpdateFunc<T> = defaultShouldUpdate): T | undefined {
   const prevRef = useRef<T>();
   const curRef = useRef<T>();
 

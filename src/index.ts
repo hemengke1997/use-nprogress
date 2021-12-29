@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
-import usePrevious from "./usePrevious";
-import useSafeState from "./useSafeState";
+import { useEffect, useRef } from 'react';
+import usePrevious from './usePrevious';
+import useSafeState from './useSafeState';
 
 interface NProgressOptions {
   animationDuration?: number;
@@ -58,8 +58,7 @@ class NProgress {
   configure(options?: Partial<NProgressOptions>) {
     for (let key in options) {
       const value = options[key];
-      if (value !== undefined && options.hasOwnProperty(key))
-        Settings[key] = value;
+      if (value !== undefined && options.hasOwnProperty(key)) Settings[key] = value;
     }
     return Settings;
   }
@@ -149,7 +148,7 @@ class NProgress {
     } else if (n > 1) {
       return;
     } else {
-      if (typeof amount !== "number") {
+      if (typeof amount !== 'number') {
         if (n >= 0 && n < 0.2) {
           amount = 0.1;
         } else if (n >= 0.2 && n < 0.5) {
@@ -177,8 +176,8 @@ function useNProgress({
   minimum = 0.08,
 }: NProgressOptions = {}) {
   const nprogressRef = useRef<NProgress>();
-  const setProgressRef = useRef<NProgress["set"]>();
-  const setIsFinishedRef = useRef<NProgress["setIsFinished"]>();
+  const setProgressRef = useRef<NProgress['set']>();
+  const setIsFinishedRef = useRef<NProgress['setIsFinished']>();
 
   const [progressKey, setProgressKey] = useSafeState<number>(0);
 

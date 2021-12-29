@@ -1,11 +1,18 @@
 # use-nprogress
 
-> react hook for NProgress
+## WHAT IS THIS?
 
-- **React Hooks** _适用于 React Hooks 组件_
-- **无依赖** _仅仅使用了 React，无第三方库的依赖_
-- **简单** _只需会 React Hooks，即可上手_
-- **TypeScript 编写** _完备的类型提示，轻松编写代码_
+[NProgress](https://github.com/rstacruz/nprogress)的进度数值，而非 UI
+
+## EXAMPLES
+
+[BASIC EXAMPLE](https://codesandbox.io/s/holy-feather-quz0v)
+
+[NProgress EXAMPLE](https://codesandbox.io/s/amazing-hooks-gk7qd?file=/src/App.tsx)
+
+## 特点
+
+- 支持多实例（NProgress 是单例模式）
 
 ## 安装
 
@@ -16,8 +23,8 @@ yarn add use-nprogress
 ## 使用
 
 ```tsx
-import { useState } from 'react'
-import useNProgress from "use-nprogress";
+import { useState } from 'react';
+import useNProgress from 'use-nprogress';
 
 const Example: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -27,3 +34,7 @@ const Example: React.FC = () => {
   });
 };
 ```
+
+## 灵感来源
+
+[nprogress](https://github.com/rstacruz/nprogress)
