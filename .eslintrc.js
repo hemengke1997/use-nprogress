@@ -12,7 +12,7 @@ module.exports = defineConfig({
     },
     requireConfigFile: false,
   },
-  extends: ['prettier', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+  extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended', 'prettier'],
   plugins: ['prettier'],
   env: {
     browser: true,

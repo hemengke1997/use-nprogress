@@ -20,8 +20,8 @@
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "downlevelIteration": true,
-    "strict": true,
+    "strict": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", ".eslintrc.js"],
   "exclude": ["node_modules", "dist", "**/*.js"]
 }
