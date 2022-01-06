@@ -1,28 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
-import typescript2 from "rollup-plugin-typescript2";
+import typescript from "@rollup/plugin-typescript";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    {
-      ...typescript2({
-        check: true,
-        tsconfig: path.resolve(__dirname, `tsconfig.json`),
-        tsconfigOverride: {
-          compilerOptions: {
-            sourceMap: false,
-            declaration: true,
-            declarationMap: false,
-          },
-        },
-      }),
-      enforce: "pre",
-      apply: "build",
-    },
-  ],
+  plugins: [react()],
   build: {
     outDir: "dist",
     minify: true,
@@ -47,7 +30,12 @@ export default defineConfig({
           react: "react",
         },
       },
+      plugins: [
+        typescript({
+          tsconfig: path.resolve(__dirname, "tsconfig.json"),
+          include: ["src/index.ts"],
+        }),
+      ],
     },
   },
 });
-
