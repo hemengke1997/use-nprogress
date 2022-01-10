@@ -1,6 +1,6 @@
 {
-  "name": "use-nprogress",
-  "version": "0.0.7",
+  "name": "@minko-fe/use-nprogress",
+  "version": "0.0.8",
   "description": "react hook for NProgress",
   "author": "hemengke1997 <23536175@qq.com>",
   "types": "./dist/index.d.ts",
@@ -36,7 +36,9 @@
     "prepublish": "yarn build",
     "precommit": "lint-staged",
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx",
-    "prettier": "prettier -c --write \"src/**/*\""
+    "prettier": "prettier -c --write \"src/**/*\"",
+    "run-publish": "yarn publish --access public",
+    "upgrade:deps": "pnpm up -i --latest"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
@@ -67,5 +69,8 @@
     "tslib": "^2.3.1",
     "typescript": "^4.5.4",
     "vite": "^2.7.10"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
