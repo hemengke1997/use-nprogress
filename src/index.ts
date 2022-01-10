@@ -2,17 +2,20 @@ import { useEffect, useRef } from 'react';
 import usePrevious from './usePrevious';
 import useSafeState from './useSafeState';
 
-interface NProgressOptions {
+type NProgressOptions = {
   animationDuration?: number;
   incrementDuration?: number;
   isAnimating?: boolean;
   minimum?: number;
-}
+};
 
-const Settings: NProgressOptions = {
+type NprogressSetting = Required<NProgressOptions>;
+
+const Settings: NprogressSetting = {
   minimum: 0.08,
   incrementDuration: 200,
   animationDuration: 200,
+  isAnimating: false,
 };
 
 type Next = () => void;
@@ -20,7 +23,7 @@ type Next = () => void;
 type Fn = (next: Next) => void;
 
 class NProgress {
-  settings: NProgressOptions;
+  settings: NprogressSetting;
   status: number | null = null;
   isFinished: boolean = false;
   progress: number = 0;
@@ -56,7 +59,7 @@ class NProgress {
 
   /** @name 配置NProgress */
   configure(options?: Partial<NProgressOptions>) {
-    for (let key in options) {
+    for (const key in options) {
       const value = options[key];
       if (value !== undefined && options.hasOwnProperty(key)) Settings[key] = value;
     }
@@ -67,7 +70,7 @@ class NProgress {
   set(n: number) {
     const { animationDuration, minimum } = this.settings;
 
-    n = this.clamp(n, minimum!, 1);
+    n = this.clamp(n, minimum, 1);
 
     this.setProgress(n);
 

@@ -17,7 +17,7 @@
 ## 安装
 
 ```bash
-yarn add use-nprogress
+yarn add @minko-fe/use-nprogress
 ```
 
 ## 使用
